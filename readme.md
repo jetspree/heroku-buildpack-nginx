@@ -1,6 +1,10 @@
-# Heroku Buildpack: NGINX
+# Heroku Buildpack: NGINX (for Jetspree)
 
 Nginx-buildpack vendors NGINX inside a dyno and connects NGINX to an app server via UNIX domain sockets.
+
+This fork contains modifications made specifically for Jetspree's infrastructure, and includes the following.
+
+- Google PageSpeed NGINX Add-On Module
 
 ## Motivation
 
@@ -13,7 +17,7 @@ Some application servers (e.g. Ruby's Unicorn) halt progress when dealing with n
 ### Heroku 18
 * NGINX Version: 1.18.0
 ### Heroku 20
-* NGINX Version: 1.18.0
+* NGINX Version: 1.20.0
 
 ## Requirements (Proxy Mode)
 
