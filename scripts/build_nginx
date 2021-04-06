@@ -49,6 +49,12 @@ echo "Downloading $psol_url"
   curl -L $psol_url | tar xvz
 )
 
+# The uuid-dev package is required to build PageSpeed Optimization Library (PSOL). This package comes with Heroku-20
+# by default, but is not included in Heroku-16 or Heroku-18.
+if [[ "$STACK" == "heroku-16" || "$STACK" == "heroku-18" ]]; then
+  apt-get update -y && apt-get install -y uuid-dev
+fi
+
 # This will build `nginx`
 (
   cd nginx-${NGINX_VERSION}
